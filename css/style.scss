@@ -1,0 +1,293 @@
+$white: #eee;
+$darkgrey: #212121;
+$blue: #006E80;
+$grey: #707070;
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-color: $darkgrey;
+   font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+   font-weight: 300;
+   font-size: 25px;
+   text-align: center;
+   padding: 15px;
+}
+
+input,
+textarea {
+   font-family: 'Roboto', sans-serif;
+}
+
+header {
+   background: url('../img/Caminho\ 7@2x.png') no-repeat -120px 0;
+   height: 175px;
+   display: flex;
+   flex-direction: column;
+   nav {
+      display: flex;
+      justify-content: flex-end;
+      .menu-btn {
+         padding: 25px;
+         height: 10px;
+         position: fixed;
+         z-index: 3;
+         .burger {
+            width: 22px;
+            height: 2px;
+            background:$white;
+            border-radius: 5px;
+            transition: all .5s ease-in-out;
+            &::before,
+            &::after {
+               content: '';
+               position: absolute;
+               width: 22px;
+               height: 2px;
+               background: $white;
+               border-radius: 5px;
+               transition: all .5s ease-in-out;
+            }
+            &::before {
+               transform: translateY(-7px);
+            }
+            &::after {
+               transform: translateY(7px);
+            }
+         }
+         &.open .burger {
+            transform: translateX(-50px);
+            background: transparent;
+         }
+         &.open .burger::before {
+            transform: rotate(45deg) translate(35px, -35px);
+         }
+   
+         &.open .burger::after {
+            transform: rotate(-45deg) translate(35px, 35px);
+         }
+      }
+      .menu {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-evenly;
+         height: 100vh;
+         width: 70vw;
+         background: $blue;
+         position: fixed;
+         top: 0;
+         right: -70vw;
+         z-index: 1;
+         box-shadow: $darkgrey -5px 0 12px;
+         transition: transform 0.4s ease-out;
+         #navUL {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            li {
+               padding: 15px;
+               a {
+                  padding: 5px;
+                  text-decoration: none;
+                  font-size: 1.6em;
+                  font-weight: 700;
+                  color: $white;
+               }
+            }
+            hr {
+               opacity: 0.3;
+               border: 1px solid $white;
+               border-bottom: 1px solid $blue;
+               width: 70%;
+            }
+         }
+         .social {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img {
+               width: 62px;
+            }
+         }
+         &.show {
+            transform: translateX(-70vw);
+         }
+      }
+   }
+   
+
+   .title {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 75px;
+      max-width: 450px;
+      img {
+         width: 130px;
+         height: 130px;
+         border: 3px solid $white;
+         border-radius: 50%;
+      }
+      .name {
+         padding-top: 12px;
+         align-self: center;
+         text-transform: uppercase;
+         color: $white;
+         h1 {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-align: right;
+         }
+         h4 {
+            padding-right: 3px;
+            font-size: 16px;
+            font-weight: 300;
+            text-align: right;
+            line-height: 0.5em;
+         }
+      }
+   }
+}
+
+.container {
+   background-color: $white;
+   .about,
+   .skills,
+   .projects,
+   .contact {
+      padding: 0 25px 25px;
+   }
+
+   .about {
+      h2 {
+         color: $blue;
+      }
+      p {
+         color: $grey;
+         font-weight: 300;
+         font-size: 15px;
+         text-align: center;
+      }
+   }
+   .skills {
+      background: $blue;
+      h2 {
+         color: $white;
+      }
+      .slider {
+         margin-top: 10px;
+         ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            li {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               color: $white;
+               font-size: 10px;
+               font-weight: 300;
+               .skillImg {
+                  height: 60px;
+                  display: flex;
+                  align-items: center;
+               }
+               p {
+                  color: #7EFFFB;
+                  opacity: 0.7;
+               }
+            }
+         }
+      }
+   }
+   .projects {
+      h2 {
+         color: $blue;
+      }
+
+      .grid-container {
+         .grid-item {
+            margin-bottom: 20px;
+
+            h3 {
+               color: $blue;
+               font-size: 1.2em;
+               font-weight: 300;
+            }
+            img {
+               width: 100%;
+            }
+            .proj-description {
+               color: $grey;
+               text-align: justify;
+            }
+         }
+      }
+   }
+   .contact {
+      background: $blue;
+      h2 {
+         color: $white;
+      }
+      form {
+         display: flex;
+         flex-direction: column;
+
+         #email,
+         #message {
+            padding: 10px 15px;
+            border-radius: 4px;
+            border: 1px solid $grey;
+            margin: 6px 0;
+            font-size: 0.9em;
+            background: $white;
+            color: $grey;
+         }
+
+         #message {
+            resize: none;
+         }
+         #sendBtn {
+            padding: 8px;
+            width: 33%;
+            border-radius: 4px;
+            border: 1px solid $grey;
+            color: $grey;
+         }
+      }
+   }
+}
+footer {
+   padding: 10px 25px;
+   .social {
+      display: flex;
+      justify-content: space-around;
+      width: 350px;
+      margin: 0 auto;
+   }
+   p {
+      text-align: center;
+      color: $blue;
+      font-weight: 700;
+      span {
+         color: $grey;
+         font-weight: 300;
+      }
+   }
+}
+
+@media screen and (min-width: 767px) {
+   nav {
+      ul {
+         display: none;
+      }
+   }
+}
