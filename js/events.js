@@ -30,12 +30,11 @@ sortButton.addEventListener('click', () => {
 })
 
 ascButton.addEventListener('click', () => {
-   sortProj('asc')
+   printSortedArr('asc')
    sortMenu.classList.remove('show')
 })
 
 descButton.addEventListener('click', () => {
-   sortProj('desc')
+   printSortedArr('desc')
    sortMenu.classList.remove('show')
-
 })

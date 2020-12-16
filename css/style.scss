@@ -3,6 +3,10 @@ $darkgrey: #212121;
 $blue: #006E80;
 $grey: #707070;
 
+html {
+   scroll-behavior: smooth;
+}
+
 * {
    margin: 0;
    padding: 0;
@@ -28,10 +32,10 @@ textarea {
 
 header {
    background: url('../img/Caminho\ 7@2x.png') no-repeat -120px 0;
-   height: 175px;
-   
    display: flex;
    flex-direction: column;
+   justify-content: space-between;
+   height: 195px;
    nav {
       display: flex;
       justify-content: flex-end;
@@ -40,6 +44,8 @@ header {
          height: 10px;
          position: relative;
          z-index: 3;
+         top: 0;
+         right: 0;
          .burger {
             width: 22px;
             height: 2px;
@@ -63,6 +69,10 @@ header {
                transform: translateY(7px);
             }
          }
+         &.open {
+            position: fixed;
+         }
+
          &.open .burger {
             transform: translateX(-50px);
             background: transparent;
@@ -79,14 +89,13 @@ header {
          display: flex;
          flex-direction: column;
          justify-content: space-evenly;
-         height: 100vh;
          width: 68vw;
+         height: 100vh;
          background: $blue;
          position: fixed;
          top: 0;
          right: -68vw;
          z-index: 1;
-         
          transition: transform 0.2s ease-out;
          #navUL {
             list-style: none;
@@ -125,7 +134,9 @@ header {
          &.show {
             transform: translateX(-68vw);
             box-shadow: $darkgrey -4px 0 12px;
+            height: 100vh;
          }
+         
       }
    }
    
@@ -133,32 +144,33 @@ header {
    .title {
       display: flex;
       justify-content: space-evenly;
+      align-items: flex-end;
       position: relative;
-      top: 25px;
+      bottom: -35px;
       max-width: 450px;
+      padding: 5px;
       img {
          width: 130px;
-         height: 130px;
          border: 3px solid $white;
          border-radius: 50%;
          background: $white;
+         flex-shrink: 2;
       }
       .name {
-         padding-top: 12px;
          align-self: center;
          text-transform: uppercase;
          color: $white;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-end;
          h1 {
-            font-size: 22px;
+            font-size: 1.5em;
             font-weight: bold;
             letter-spacing: 3px;
-            text-align: right;
          }
          h4 {
             padding-right: 3px;
-            font-size: 16px;
             font-weight: 300;
-            text-align: right;
             line-height: 0.5em;
          }
       }
@@ -309,7 +321,7 @@ header {
       form {
          display: flex;
          flex-direction: column;
-
+         #nome,
          #email,
          #message {
             padding: 10px 15px;
@@ -352,6 +364,30 @@ footer {
       span {
          color: $grey;
          font-weight: 300;
+      }
+   }
+}
+
+@media screen and (max-width: 360px) {
+   header {
+      .title {
+         justify-content: center;
+         .name {
+            padding: 0 10px 20px;
+            h1,
+            h4 {
+               align-self: flex-start;
+               padding-top: 5px;
+            }
+            h1 {
+               line-height: 0.9em;
+            }
+         }
+      }
+   }
+   .container {
+      .about {
+         padding-top: 10px;
       }
    }
 }

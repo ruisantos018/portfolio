@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +28,6 @@ textarea {
 
 header {
   background: url("../img/Caminho 7@2x.png") no-repeat -120px 0;
-  height: 175px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,6 +35,10 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 195px;
 }
 
 header nav {
@@ -48,6 +55,8 @@ header nav .menu-btn {
   height: 10px;
   position: relative;
   z-index: 3;
+  top: 0;
+  right: 0;
 }
 
 header nav .menu-btn .burger {
@@ -80,6 +89,10 @@ header nav .menu-btn .burger::after {
           transform: translateY(7px);
 }
 
+header nav .menu-btn.open {
+  position: fixed;
+}
+
 header nav .menu-btn.open .burger {
   -webkit-transform: translateX(-50px);
           transform: translateX(-50px);
@@ -107,8 +120,8 @@ header nav .menu {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: 100vh;
   width: 68vw;
+  height: 100vh;
   background: #006E80;
   position: fixed;
   top: 0;
@@ -178,6 +191,7 @@ header nav .menu.show {
           transform: translateX(-68vw);
   -webkit-box-shadow: #212121 -4px 0 12px;
           box-shadow: #212121 -4px 0 12px;
+  height: 100vh;
 }
 
 header .title {
@@ -187,40 +201,50 @@ header .title {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   position: relative;
-  top: 25px;
+  bottom: -35px;
   max-width: 450px;
+  padding: 5px;
 }
 
 header .title img {
   width: 130px;
-  height: 130px;
   border: 3px solid #eee;
   border-radius: 50%;
   background: #eee;
+  -ms-flex-negative: 2;
+      flex-shrink: 2;
 }
 
 header .title .name {
-  padding-top: 12px;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
       align-self: center;
   text-transform: uppercase;
   color: #eee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 header .title .name h1 {
-  font-size: 22px;
+  font-size: 1.5em;
   font-weight: bold;
   letter-spacing: 3px;
-  text-align: right;
 }
 
 header .title .name h4 {
   padding-right: 3px;
-  font-size: 16px;
   font-weight: 300;
-  text-align: right;
   line-height: 0.5em;
 }
 
@@ -435,6 +459,7 @@ header .title .name h4 {
           flex-direction: column;
 }
 
+.container .contact form #nome,
 .container .contact form #email,
 .container .contact form #message {
   padding: 10px 15px;
@@ -485,6 +510,29 @@ footer p {
 footer p span {
   color: #707070;
   font-weight: 300;
+}
+
+@media screen and (max-width: 360px) {
+  header .title {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header .title .name {
+    padding: 0 10px 20px;
+  }
+  header .title .name h1,
+  header .title .name h4 {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    padding-top: 5px;
+  }
+  header .title .name h1 {
+    line-height: 0.9em;
+  }
+  .container .about {
+    padding-top: 10px;
+  }
 }
 
 @media screen and (min-width: 767px) {
