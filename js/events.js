@@ -1,10 +1,13 @@
 const menuButton = document.querySelector('.menu-btn')
 const menu = document.querySelector('.menu')
 const sortButton = document.querySelector('#sortBtn')
+const sortMenu = document.querySelector('.sort')
 const ascButton = document.getElementById('asc')
 const descButton = document.getElementById('desc')
-const sortMenu = document.querySelector('.sort')
+const formElem = document.getElementById('contactForm')
 
+
+/* MENU */
 let menuOpen = false
 menuButton.addEventListener('click', () => {
     if(!menuOpen) {
@@ -18,6 +21,7 @@ menuButton.addEventListener('click', () => {
     }
 })
 
+/* SORT PROJECT */
 let sortOpen = false
 sortButton.addEventListener('click', () => {
    if(!sortOpen) {
@@ -37,4 +41,10 @@ ascButton.addEventListener('click', () => {
 descButton.addEventListener('click', () => {
    printSortedArr('desc')
    sortMenu.classList.remove('show')
+})
+
+/* FORM */
+formElem.addEventListener('submit', (e) => {
+   e.preventDefault()
+   validateForm(formElem)
 })

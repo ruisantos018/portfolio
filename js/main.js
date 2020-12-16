@@ -37,6 +37,17 @@ function validateForm(form) {
    const msg = form.querySelector('#message').value;
 
    if(nome === '' || nome === null) {
-      
+      form.querySelector('#nome').style.border = "2px solid red"
+      console.log('erro nome')
+   }
+
+   if(email === '' || email === null) {
+      form.querySelector('#email').style.border = "2px solid red"
+      console.log('erro email')
+   }
+
+   if(msg === '' || msg === null) {
+      form.querySelector('#message').style.border = "2px solid red"
+      console.log('erro mensagem')
    }
 }
