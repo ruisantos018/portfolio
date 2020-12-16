@@ -46,7 +46,7 @@ header nav {
 header nav .menu-btn {
   padding: 25px;
   height: 10px;
-  position: fixed;
+  position: relative;
   z-index: 3;
 }
 
@@ -166,10 +166,13 @@ header nav .menu .social {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #eee;
 }
 
-header nav .menu .social img {
-  width: 62px;
+header nav .menu .social i {
+  margin: 10px auto;
+  padding: 5px;
+  text-shadow: #444 1px 0 6px;
 }
 
 header nav .menu.show {
@@ -184,7 +187,8 @@ header .title {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  margin-top: 75px;
+  position: relative;
+  top: 25px;
   max-width: 450px;
 }
 
@@ -193,6 +197,7 @@ header .title img {
   height: 130px;
   border: 3px solid #eee;
   border-radius: 50%;
+  background: #eee;
 }
 
 header .title .name {
@@ -374,7 +379,9 @@ footer .social {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 350px;
-  margin: 0 auto;
+  margin: 0 auto 10px;
+  color: #eee;
+  text-shadow: #151515 1px 0 6px;
 }
 
 footer p {

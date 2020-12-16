@@ -37,7 +37,7 @@ header {
       .menu-btn {
          padding: 25px;
          height: 10px;
-         position: fixed;
+         position: relative;
          z-index: 3;
          .burger {
             width: 22px;
@@ -113,8 +113,12 @@ header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            img {
-               width: 62px;
+            color: $white;
+            i {
+               margin: 10px auto;
+               padding: 5px;
+               text-shadow: #444 1px 0 6px;
+
             }
          }
          &.show {
@@ -127,13 +131,15 @@ header {
    .title {
       display: flex;
       justify-content: space-evenly;
-      margin-top: 75px;
+      position: relative;
+      top: 25px;
       max-width: 450px;
       img {
          width: 130px;
          height: 130px;
          border: 3px solid $white;
          border-radius: 50%;
+         background: $white;
       }
       .name {
          padding-top: 12px;
@@ -275,7 +281,9 @@ footer {
       display: flex;
       justify-content: space-around;
       width: 350px;
-      margin: 0 auto;
+      margin: 0 auto 10px;
+      color: $white;
+      text-shadow: #151515 1px 0 6px;
    }
    p {
       text-align: center;
