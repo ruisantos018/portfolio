@@ -199,6 +199,10 @@ header {
                   height: 60px;
                   display: flex;
                   align-items: center;
+                  i {
+                     font-size: 3rem;
+                     text-shadow: #444 1px 0 6px;
+                  }
                }
                p {
                   color: #7EFFFB;

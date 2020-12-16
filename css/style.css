@@ -288,6 +288,11 @@ header .title .name h4 {
           align-items: center;
 }
 
+.container .skills .slider ul li .skillImg i {
+  font-size: 3rem;
+  text-shadow: #444 1px 0 6px;
+}
+
 .container .skills .slider ul li p {
   color: #7EFFFB;
   opacity: 0.7;
