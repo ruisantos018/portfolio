@@ -86,7 +86,7 @@ header {
          right: -70vw;
          z-index: 1;
          box-shadow: $darkgrey -5px 0 12px;
-         transition: transform 0.4s ease-out;
+         transition: transform 0.2s ease-out;
          #navUL {
             list-style: none;
             display: flex;
@@ -261,6 +261,7 @@ header {
             border-radius: 4px;
             border: 1px solid $grey;
             color: $grey;
+            align-self: flex-end;
          }
       }
    }
