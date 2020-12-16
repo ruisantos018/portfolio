@@ -1,6 +1,8 @@
 const menuButton = document.querySelector('.menu-btn')
 const menu = document.querySelector('.menu')
 const sortButton = document.querySelector('#sortBtn')
+const ascButton = document.getElementById('asc')
+const descButton = document.getElementById('desc')
 const sortMenu = document.querySelector('.sort')
 
 let menuOpen = false
@@ -25,4 +27,15 @@ sortButton.addEventListener('click', () => {
       sortMenu.classList.remove('show')
       sortOpen = false;
    }
+})
+
+ascButton.addEventListener('click', () => {
+   sortProj('asc')
+   sortMenu.classList.remove('show')
+})
+
+descButton.addEventListener('click', () => {
+   sortProj('desc')
+   sortMenu.classList.remove('show')
+
 })

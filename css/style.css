@@ -384,11 +384,11 @@ header .title .name h4 {
   opacity: 1;
 }
 
-.container .projects .grid-container .grid-item {
+.container .projects .grid-container .proj {
   margin-bottom: 20px;
 }
 
-.container .projects .grid-container .grid-item h3 {
+.container .projects .grid-container .proj h3 {
   color: #006E80;
   font-size: 1.2em;
   font-weight: 300;
@@ -403,16 +403,16 @@ header .title .name h4 {
           align-items: center;
 }
 
-.container .projects .grid-container .grid-item h3 span {
+.container .projects .grid-container .proj h3 span {
   color: #707070;
   font-size: 0.7em;
 }
 
-.container .projects .grid-container .grid-item img {
+.container .projects .grid-container .proj img {
   width: 100%;
 }
 
-.container .projects .grid-container .grid-item .proj-description {
+.container .projects .grid-container .proj .proj-description {
   color: #707070;
   text-align: justify;
 }
