@@ -29,6 +29,7 @@ textarea {
 header {
    background: url('../img/Caminho\ 7@2x.png') no-repeat -120px 0;
    height: 175px;
+   
    display: flex;
    flex-direction: column;
    nav {
@@ -85,7 +86,7 @@ header {
          top: 0;
          right: -70vw;
          z-index: 1;
-         box-shadow: $darkgrey -5px 0 12px;
+         
          transition: transform 0.2s ease-out;
          #navUL {
             list-style: none;
@@ -123,6 +124,7 @@ header {
          }
          &.show {
             transform: translateX(-70vw);
+            box-shadow: $darkgrey -5px 0 12px;
          }
       }
    }
@@ -280,7 +282,7 @@ footer {
    .social {
       display: flex;
       justify-content: space-around;
-      width: 350px;
+      width: 95%;
       margin: 0 auto 10px;
       color: $white;
       text-shadow: #151515 1px 0 6px;

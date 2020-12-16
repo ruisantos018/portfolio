@@ -114,8 +114,6 @@ header nav .menu {
   top: 0;
   right: -70vw;
   z-index: 1;
-  -webkit-box-shadow: #212121 -5px 0 12px;
-          box-shadow: #212121 -5px 0 12px;
   -webkit-transition: -webkit-transform 0.2s ease-out;
   transition: -webkit-transform 0.2s ease-out;
   transition: transform 0.2s ease-out;
@@ -178,6 +176,8 @@ header nav .menu .social i {
 header nav .menu.show {
   -webkit-transform: translateX(-70vw);
           transform: translateX(-70vw);
+  -webkit-box-shadow: #212121 -5px 0 12px;
+          box-shadow: #212121 -5px 0 12px;
 }
 
 header .title {
@@ -378,7 +378,7 @@ footer .social {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 350px;
+  width: 95%;
   margin: 0 auto 10px;
   color: #eee;
   text-shadow: #151515 1px 0 6px;
