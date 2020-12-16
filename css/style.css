@@ -330,7 +330,7 @@ header .title .name h4 {
 }
 
 .container .projects .sort {
-  background: #eee;
+  background: #006E80;
   border: 1px solid #006E80;
   text-align: center;
   border-radius: 4px;
@@ -347,7 +347,6 @@ header .title .name h4 {
 }
 
 .container .projects .sort h4 {
-  background: #006E80;
   color: #eee;
   padding: 5px;
 }
@@ -364,6 +363,7 @@ header .title .name h4 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #eee;
 }
 
 .container .projects .sort ul li {
