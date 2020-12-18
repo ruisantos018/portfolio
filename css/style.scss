@@ -128,7 +128,6 @@ header {
                margin: 10px auto;
                padding: 5px;
                text-shadow: #444 1px 0 6px;
-
             }
          }
          &.show {
@@ -326,11 +325,16 @@ header {
          #message {
             padding: 10px 15px;
             border-radius: 4px;
-            border: 1px solid $grey;
             margin: 6px 0;
             font-size: 0.9em;
             background: $white;
             color: $grey;
+            border: 1px solid $grey;
+            transition: box-shadow 0.3s;
+
+            &:focus {
+               box-shadow: 0 2px 5px #444;
+            }
          }
 
          #message {
@@ -392,10 +396,39 @@ footer {
    }
 }
 
-@media screen and (min-width: 767px) {
+/* Medium devices (landscape tablets, 768px and up) */
+@media screen and (min-width: 768px) {
    nav {
-      ul {
+      .menu-btn {
          display: none;
+      }
+      
+      #navUL {
+         
       }
    }
 }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+
+
+@media (orientation: landscape) {
+   header {
+      nav {
+         .menu {
+            width: 50vw;
+            .social {
+               flex-direction: row;
+               justify-content: center;
+               i {
+                  margin: 10px 20px;
+               }
+            }
+         }
+      }
+   }
+ }
