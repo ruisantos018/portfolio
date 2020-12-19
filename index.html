@@ -14,9 +14,9 @@
       <nav>
          <div class="menu">
             <ul id="navUL">
-               <li><a href="#">ABOUT</a></li><hr>
-               <li><a href="#">SKILLS</a></li><hr>
-               <li><a href="#">PROJECTS</a></li><hr>
+               <li><a href="#about">ABOUT</a></li><hr>
+               <li><a href="#skills">SKILLS</a></li><hr>
+               <li><a href="#projects">PROJECTS</a></li><hr>
                <li><a href="#contact">CONTACT ME</a></li>
             </ul>
             <div class="social">
@@ -40,11 +40,11 @@
       </div>
    </header>
    <div class="container">
-      <section class="about">
+      <section class="about" id="about">
          <h2>ABOUT ME</h2>
          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nobis quisquam, rerum nam accusamus nemo ad, molestias eius eveniet est blanditiis aut. Aperiam, magni nam? Neque maxime tempore magnam nulla.</p>
       </section>
-      <section class="skills">
+      <section class="skills" id="skills">
          <h2>SKILLS</h2>
          <div class="slider">
             <ul>
@@ -55,7 +55,7 @@
             </ul>
          </div>
       </section>
-      <section class="projects">
+      <section class="projects" id="projects">
          <h2>PROJECTS<span id="sortBtn"><i class="fas fa-calendar-alt"></i><i class="fas fa-sort"></i></span></h2>
          <div class="sort">
             <h4>Sort by Date</h4>
@@ -67,40 +67,34 @@
          <div class="grid-container" id="projContainer">
             <div class="proj" data-date="2017-12-10">
                <h3>Project Name 1<span>10/12/2017</span></h3>
-               <img src="./img/Retângulo -1@2x.png" alt="">
-               <p class="proj-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur iure necessitatibus veritatis voluptas beatae. Accusamus similique repellat reprehenderit dolorum! Asperiores sint ab veniam, debitis aliquid expedita iure nulla quasi mollitia!</p>
+               <div class="proj-img"><img src="./img/proj/calcIP1.png" alt=""></div>
             </div>
             <div class="proj" data-date="2018-03-15">
                <h3>Project Name 2<span>15/03/2018</span></h3>
-               <img src="./img/Retângulo -1@2x.png" alt="">
-               <p class="proj-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur iure necessitatibus veritatis voluptas beatae. Accusamus similique repellat reprehenderit dolorum! Asperiores sint ab veniam, debitis aliquid expedita iure nulla quasi mollitia!</p>
+               <div class="proj-img"><img src="./img/proj/farfetch1.png" alt=""></div>
             </div>
-            <div class="proj" data-date="2020-01-22">
+            <div class="proj main-proj" data-date="2020-01-22">
                <h3>Project Name 3<span>22/01/2020</span></h3>
-               <img src="./img/Retângulo -1@2x.png" alt="">
-               <p class="proj-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur iure necessitatibus veritatis voluptas beatae. Accusamus similique repellat reprehenderit dolorum! Asperiores sint ab veniam, debitis aliquid expedita iure nulla quasi mollitia!</p>
+               <div class="proj-img"><img src="./img/proj/nirvana1.png" alt=""></div>
             </div>
             <div class="proj" data-date="2016-05-13">
                <h3>Project Name 4<span>13/05/2016</span></h3>
-               <img src="./img/Retângulo -1@2x.png" alt="">
-               <p class="proj-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur iure necessitatibus veritatis voluptas beatae. Accusamus similique repellat reprehenderit dolorum! Asperiores sint ab veniam, debitis aliquid expedita iure nulla quasi mollitia!</p>
-            </div>
-            <div class="proj" data-date="2019-02-04">
-               <h3>Project Name 5<span>04/02/2019</span></h3>
-               <img src="./img/Retângulo -1@2x.png" alt="">
-               <p class="proj-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur iure necessitatibus veritatis voluptas beatae. Accusamus similique repellat reprehenderit dolorum! Asperiores sint ab veniam, debitis aliquid expedita iure nulla quasi mollitia!</p>
+               <div class="proj-img"><img src="./img/proj/randomQuote1.png" alt=""></div>
             </div>
             <div class="proj" data-date="2020-05-20">
                <h3>Project Name 6<span>20/05/2020</span></h3>
-               <img src="./img/Retângulo -1@2x.png" alt="">
-               <p class="proj-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur iure necessitatibus veritatis voluptas beatae. Accusamus similique repellat reprehenderit dolorum! Asperiores sint ab veniam, debitis aliquid expedita iure nulla quasi mollitia!</p>
+               <div class="proj-img"><img src="./img/proj/wiki1.png" alt=""></div>
+            </div>
+            <div class="proj" data-date="2019-02-04">
+               <h3>Project Name 5<span>04/02/2019</span></h3>
+               <div class="proj-img"><img src="./img/proj/spotipimba2.png" alt=""></div>
             </div>
          </div>
       </section>
       <section class="contact" id="contact">
          <h2>CONTACT ME</h2>
          <form action="#" id="contactForm">
-            <input type="text" name="nome" id="nome" placeholder="Nome..." required>
+            <input type="text" name="name" id="name" placeholder="Name..." required>
             <input type="text" name="email" id="email" placeholder="Email..." required>
             <textarea name="message" id="message" cols="30" rows="5" placeholder="Message..." required></textarea>
             <input type="submit" id="sendBtn" value="Send">

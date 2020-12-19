@@ -27,7 +27,7 @@ textarea {
 }
 
 header {
-  background: url("../img/Caminho 7@2x.png") no-repeat -120px 0;
+  background: url("../img/Caminho 7@2x.png") no-repeat -10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -205,8 +205,9 @@ header .title {
       -ms-flex-align: end;
           align-items: flex-end;
   position: relative;
-  bottom: -35px;
+  bottom: -33px;
   max-width: 450px;
+  height: 140px;
   padding: 5px;
 }
 
@@ -215,8 +216,6 @@ header .title img {
   border: 3px solid #eee;
   border-radius: 50%;
   background: #eee;
-  -ms-flex-negative: 2;
-      flex-shrink: 2;
 }
 
 header .title .name {
@@ -234,6 +233,10 @@ header .title .name {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 75px;
 }
 
 header .title .name h1 {
@@ -245,7 +248,6 @@ header .title .name h1 {
 header .title .name h4 {
   padding-right: 3px;
   font-weight: 300;
-  line-height: 0.5em;
 }
 
 .container {
@@ -408,8 +410,23 @@ header .title .name h4 {
   opacity: 1;
 }
 
+.container .projects .grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  grid-auto-rows: auto;
+  grid-row-gap: 15px;
+}
+
 .container .projects .grid-container .proj {
-  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .container .projects .grid-container .proj h3 {
@@ -432,13 +449,8 @@ header .title .name h4 {
   font-size: 0.7em;
 }
 
-.container .projects .grid-container .proj img {
+.container .projects .grid-container .proj .proj-img img {
   width: 100%;
-}
-
-.container .projects .grid-container .proj .proj-description {
-  color: #707070;
-  text-align: justify;
 }
 
 .container .contact {
@@ -459,7 +471,7 @@ header .title .name h4 {
           flex-direction: column;
 }
 
-.container .contact form #nome,
+.container .contact form #name,
 .container .contact form #email,
 .container .contact form #message {
   padding: 10px 15px;
@@ -475,7 +487,7 @@ header .title .name h4 {
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 
-.container .contact form #nome:focus,
+.container .contact form #name:focus,
 .container .contact form #email:focus,
 .container .contact form #message:focus {
   -webkit-box-shadow: 0 2px 5px #444;
@@ -548,13 +560,223 @@ footer p span {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-  nav .menu-btn {
-    display: none;
+  h2 {
+    font-weight: 400;
+  }
+  .container .about {
+    padding: 10px 100px 50px;
+  }
+  .container .about p {
+    font-size: 1.3em;
+  }
+  .container .skills .slider ul li p {
+    font-size: 1.3em;
+  }
+  .container .projects .grid-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+  }
+  .container .projects .grid-container .proj h3 {
+    font-size: 1.3em;
+  }
+  .container .projects .grid-container .proj h3 span {
+    font-size: 0.8em;
+  }
+  .container .contact form {
+    width: 70%;
+    margin: 0 auto;
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .social {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 300px;
+    margin: 0;
   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  h2 {
+    font-weight: 400;
+    font-size: 1.8em;
+    text-align: center;
+    padding: 15px 0;
+  }
+  header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  header nav {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  header nav .menu-btn {
+    display: none;
+  }
+  header nav .menu {
+    position: relative;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: auto;
+    height: 75px;
+    right: auto;
+    background: none;
+  }
+  header nav .menu hr {
+    display: none;
+  }
+  header nav .menu #navUL {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header nav .menu #navUL li {
+    padding: 5px;
+  }
+  header nav .menu #navUL li a {
+    font-size: 1.2em;
+    font-weight: 400;
+    padding: 0 10px;
+    -webkit-transition: text-shadow .2s;
+    transition: text-shadow .2s;
+  }
+  header nav .menu #navUL li a:hover {
+    text-shadow: 1px 2px 5px #212121;
+  }
+  header nav .menu .social {
+    display: none;
+    overflow: hidden;
+  }
+  header .title .name {
+    padding-left: 20px;
+  }
+  .container .skills,
+  .container .projects,
+  .container .contact {
+    padding: 10px 50px 50px;
+  }
+  .container .skills .slider ul li {
+    font-size: 1em;
+  }
+  .container .skills .slider ul li .skillImg {
+    font-size: 0.9em;
+    height: 100px;
+  }
+  .container .projects .grid-container {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+    grid-gap: 8px;
+  }
+  .container .projects .grid-container .proj {
+    border: 3px solid #ddd;
+    overflow: hidden;
+  }
+  .container .projects .grid-container .proj .proj-img img {
+    height: 110%;
+  }
+  .container .projects .grid-container .proj h3 {
+    display: none;
+  }
+  .container .projects .grid-container .proj.main-proj {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 1/1/3/3;
+  }
+  .container .projects .grid-container .proj.main-proj img {
+    width: 105%;
+  }
+  .container .contact form {
+    width: 60%;
+  }
+}
+
 /* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .container .about {
+    width: 55%;
+    margin: 0 auto;
+  }
+  .container .skills .slider ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .container .skills .slider ul li {
+    margin: 0 30px;
+  }
+  .container .projects {
+    padding: 20px 150px 50px;
+  }
+  .container .contact form {
+    width: 50%;
+  }
+  footer {
+    height: 68px;
+  }
+  footer .social {
+    position: absolute;
+    right: 20px;
+  }
+}
+
+@media only screen and (min-width: 1550px) {
+  .container .projects {
+    padding: 25px 250px 50px;
+  }
+  .container .contact form {
+    width: 40%;
+  }
+}
+
 @media (orientation: landscape) {
   header nav .menu {
     width: 50vw;

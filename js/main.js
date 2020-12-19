@@ -32,11 +32,11 @@ function printSortedArr(t) {
 /* FORM VALIDATION */
 
 function validateForm(form) {
-   const nome = form.querySelector('#nome').value;
+   const name = form.querySelector('#name').value;
    const email = form.querySelector('#email').value;
    const msg = form.querySelector('#message').value;
 
-   if(nome === '' || nome === null) {
+   if(name === '' || name === null) {
       //form.querySelector('#nome').style.border = "1px solid red"
       console.log('erro nome')
    }

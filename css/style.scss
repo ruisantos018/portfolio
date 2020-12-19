@@ -31,7 +31,7 @@ textarea {
 }
 
 header {
-   background: url('../img/Caminho\ 7@2x.png') no-repeat -120px 0;
+   background: url('../img/Caminho\ 7@2x.png') no-repeat -10px;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -145,15 +145,15 @@ header {
       justify-content: space-evenly;
       align-items: flex-end;
       position: relative;
-      bottom: -35px;
+      bottom: -33px;
       max-width: 450px;
+      height: 140px;
       padding: 5px;
       img {
          width: 130px;
          border: 3px solid $white;
          border-radius: 50%;
          background: $white;
-         flex-shrink: 2;
       }
       .name {
          align-self: center;
@@ -162,6 +162,8 @@ header {
          display: flex;
          flex-direction: column;
          align-items: flex-end;
+         justify-content: center;
+         height: 75px;
          h1 {
             font-size: 1.5em;
             font-weight: bold;
@@ -170,7 +172,6 @@ header {
          h4 {
             padding-right: 3px;
             font-weight: 300;
-            line-height: 0.5em;
          }
       }
    }
@@ -288,8 +289,13 @@ header {
       }
 
       .grid-container {
+         display: grid;
+         grid-template-columns: auto;
+         grid-auto-rows: auto;
+         grid-row-gap: 15px;
          .proj {
-            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
             h3 {
                color: $blue;
                font-size: 1.2em;
@@ -302,12 +308,10 @@ header {
                   font-size: 0.7em;
                }
             }
-            img {
-               width: 100%;
-            }
-            .proj-description {
-               color: $grey;
-               text-align: justify;
+            .proj-img {
+               img {
+                  width: 100%;
+               }
             }
          }
       }
@@ -320,7 +324,7 @@ header {
       form {
          display: flex;
          flex-direction: column;
-         #nome,
+         #name,
          #email,
          #message {
             padding: 10px 15px;
@@ -398,22 +402,227 @@ footer {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-   nav {
-      .menu-btn {
-         display: none;
+   h2 {
+      font-weight: 400;
+   }
+   .container {
+      .about {
+         padding: 10px 100px 50px;
+         p {
+            font-size: 1.3em;
+         }
       }
-      
-      #navUL {
-         
+      .skills {
+         .slider {
+            ul {
+               li {
+                  p {
+                     font-size: 1.3em;
+                  }
+               }
+            }
+         }
+      }
+      .projects {
+         .grid-container {
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 25px;
+            .proj {
+               h3 {
+                  font-size: 1.3em;
+                  span {
+                     font-size: 0.8em;
+                  }
+               }
+            }
+         }
+      }
+      .contact {
+         form {
+            width: 70%;
+            margin: 0 auto;
+         }
+      }
+   }
+   footer {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .social {
+         order: 2;
+         width: 300px;
+         margin: 0;
       }
    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+   h2 {
+      font-weight: 400;
+      font-size: 1.8em;
+      text-align: center;
+      padding: 15px 0;
+   }
+
+   header {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-around;
+      
+      nav {
+         order: 2;
+         flex-direction: column;
+         justify-content: flex-end;
+         align-items: center;
+         width: fit-content;
+         .menu-btn {
+            display: none;
+         }
+         .menu {
+            position: relative;
+            flex-direction: row;
+            align-items: center;
+            width: auto;
+            height: 75px;
+            right: auto;
+            background: none;
+            hr {
+               display: none;
+            }
+            #navUL {
+               flex-direction: row;
+               align-items: center;
+               justify-content: center;
+               li {
+                  padding: 5px;
+                  a {
+                     font-size: 1.2em;
+                     font-weight: 400;
+                     padding: 0 10px;
+                     transition: text-shadow .2s;
+                     &:hover {
+                        text-shadow: 1px 2px 5px $darkgrey;
+                     }
+                  }
+               }
+            }
+            .social {
+               display: none;
+               overflow: hidden;
+            }
+         }
+         
+      }
+      .title {
+         .name {
+            padding-left: 20px;
+         }
+      }
+   }
+   .container {
+      .skills,
+      .projects,
+      .contact {
+         padding: 10px 50px 50px;
+      }
+      .skills {
+         .slider {
+            ul {
+               li {
+                  font-size: 1em;
+                  .skillImg {
+                     font-size: 0.9em;
+                     height: 100px;
+                  }
+               }
+            }
+         }
+      }
+      .projects {
+         .grid-container {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            // grid-column-gap: 9px;
+            // grid-row-gap: 1px;
+            grid-gap: 8px;
+            .proj {
+               border: 3px solid #ddd;
+               overflow: hidden;
+               .proj-img {
+                  
+                  img {
+                     height: 110%;
+                  }
+               }
+               h3 {
+                  display: none;
+               }
+               &.main-proj {
+                  grid-area: 1/1/3/3;
+                  img {
+                     width: 105%;
+                  }
+               }
+            }
+            
+         }
+      }
+      .contact {
+         form {
+            width: 60%;
+         }
+      }
+   }
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+   .container {
+      .about {
+         width: 55%;
+         margin: 0 auto;
+      }
+      .skills {
+         .slider {
+            ul {
+               justify-content: center;
+               li {
+                  margin: 0 30px;
+               }
+            }
+         }
+      }
+      .projects {
+         padding: 20px 150px 50px;
+      }
+      .contact {
+         form {
+            width: 50%;
+         }
+      }
+   }
+   footer {
+      height: 68px;
+      .social {
+         position: absolute;
+         right: 20px;
+      }
+   }
+}
+
+@media only screen and (min-width: 1550px) {
+   .container {
+      .projects {
+         padding: 25px 250px 50px;
+      }
+      .contact {
+         form {
+            width: 40%;
+         }
+      }
+   }
+}
 
 
 @media (orientation: landscape) {
