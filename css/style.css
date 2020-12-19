@@ -2,7 +2,9 @@ html {
   scroll-behavior: smooth;
 }
 
-* {
+*,
+input,
+textarea {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -189,8 +191,8 @@ header nav .menu .social i {
 header nav .menu.show {
   -webkit-transform: translateX(-68vw);
           transform: translateX(-68vw);
-  -webkit-box-shadow: #212121 -4px 0 12px;
-          box-shadow: #212121 -4px 0 12px;
+  -webkit-box-shadow: -4px 0 12px #212121;
+          box-shadow: -4px 0 12px #212121;
   height: 100vh;
 }
 
@@ -360,8 +362,8 @@ header .title .name h4 {
   border: 1px solid #006E80;
   text-align: center;
   border-radius: 4px;
-  -webkit-box-shadow: 0 1px 3px #999;
-          box-shadow: 0 1px 3px #999;
+  -webkit-box-shadow: 0 2px 5px #444;
+          box-shadow: 0 2px 5px #444;
   width: 200px;
   position: absolute;
   right: 25px;
@@ -413,8 +415,8 @@ header .title .name h4 {
 .container .projects .grid-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   grid-auto-rows: auto;
   grid-row-gap: 15px;
 }
@@ -429,7 +431,7 @@ header .title .name h4 {
           flex-direction: column;
 }
 
-.container .projects .grid-container .proj h3 {
+.container .projects .grid-container .proj .name-proj h3 {
   color: #006E80;
   font-size: 1.2em;
   font-weight: 300;
@@ -444,7 +446,7 @@ header .title .name h4 {
           align-items: center;
 }
 
-.container .projects .grid-container .proj h3 span {
+.container .projects .grid-container .proj .name-proj h3 span {
   color: #707070;
   font-size: 0.7em;
 }
@@ -503,6 +505,7 @@ header .title .name h4 {
   width: 33%;
   border-radius: 4px;
   border: 1px solid #707070;
+  background: #eee;
   color: #707070;
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -577,10 +580,10 @@ footer p span {
         grid-template-columns: 1fr 1fr;
     grid-column-gap: 25px;
   }
-  .container .projects .grid-container .proj h3 {
+  .container .projects .grid-container .proj .name-proj h3 {
     font-size: 1.3em;
   }
-  .container .projects .grid-container .proj h3 span {
+  .container .projects .grid-container .proj .name-proj h3 span {
     font-size: 0.8em;
   }
   .container .contact form {
@@ -682,8 +685,8 @@ footer p span {
     font-size: 1.2em;
     font-weight: 400;
     padding: 0 10px;
-    -webkit-transition: text-shadow .2s;
-    transition: text-shadow .2s;
+    -webkit-transition: text-shadow 0.2s;
+    transition: text-shadow 0.2s;
   }
   header nav .menu #navUL li a:hover {
     text-shadow: 1px 2px 5px #212121;
@@ -707,35 +710,94 @@ footer p span {
     font-size: 0.9em;
     height: 100px;
   }
+  .container .projects .sort.show {
+    z-index: 1;
+  }
   .container .projects .grid-container {
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-    -ms-grid-rows: (1fr)[3];
-        grid-template-rows: repeat(3, 1fr);
+    grid-auto-rows: auto;
     grid-gap: 8px;
   }
   .container .projects .grid-container .proj {
+    position: relative;
     border: 3px solid #ddd;
     overflow: hidden;
   }
   .container .projects .grid-container .proj .proj-img img {
-    height: 110%;
+    height: 100%;
   }
-  .container .projects .grid-container .proj h3 {
-    display: none;
+  .container .projects .grid-container .proj .name-proj {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(10, 10, 10, 0.8);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 7em;
+    opacity: 0;
+    white-space: nowrap;
+    cursor: pointer;
   }
-  .container .projects .grid-container .proj.main-proj {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 2;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-area: 1/1/3/3;
+  .container .projects .grid-container .proj .name-proj:hover {
+    -webkit-transition: font-size 0.5s, opacity 0.5s;
+    transition: font-size 0.5s, opacity 0.5s;
+    font-size: 1em;
+    opacity: 1;
   }
-  .container .projects .grid-container .proj.main-proj img {
-    width: 105%;
+  .container .projects .grid-container .proj .name-proj:hover h3 {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .container .projects .grid-container .proj .name-proj h3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-weight: 700;
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transition: transform 0.4s, -webkit-transform 0.4s;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
   .container .contact form {
     width: 60%;
+  }
+  .container .contact form #sendBtn {
+    cursor: pointer;
+  }
+  .container .contact form #sendBtn:hover {
+    -webkit-transition: -webkit-box-shadow 0.3s;
+    transition: -webkit-box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+    -webkit-box-shadow: 0 2px 5px #444;
+            box-shadow: 0 2px 5px #444;
+  }
+  footer .social i {
+    cursor: pointer;
+    -webkit-transition: color 0.3s, -webkit-transform 0.3s;
+    transition: color 0.3s, -webkit-transform 0.3s;
+    transition: color 0.3s, transform 0.3s;
+    transition: color 0.3s, transform 0.3s, -webkit-transform 0.3s;
+  }
+  footer .social i:hover {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+    color: #006E80;
   }
 }
 
@@ -754,7 +816,7 @@ footer p span {
     margin: 0 30px;
   }
   .container .projects {
-    padding: 20px 150px 50px;
+    padding: 20px 200px 50px;
   }
   .container .contact form {
     width: 50%;
