@@ -20,7 +20,7 @@ h2 {
   font-weight: 300;
   font-size: 25px;
   text-align: center;
-  padding: 15px 0;
+  padding-bottom: 10px;
 }
 
 input,
@@ -76,6 +76,8 @@ header nav.nav-top {
 header nav.nav-top.show {
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
+  -webkit-box-shadow: 0 2px 5px #444;
+          box-shadow: 0 2px 5px #444;
 }
 
 header nav .menu-btn {
@@ -148,12 +150,12 @@ header nav .menu {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  width: 50vw;
+  width: 70vw;
   height: 100vh;
   background: #006E80;
   position: fixed;
   top: 0;
-  right: -50vw;
+  right: -70vw;
   z-index: 1;
   -webkit-transition: -webkit-transform 0.2s ease-out;
   transition: -webkit-transform 0.2s ease-out;
@@ -205,18 +207,21 @@ header nav .menu .social {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+header nav .menu .social a {
   color: #eee;
 }
 
-header nav .menu .social i {
+header nav .menu .social a i {
   margin: 10px auto;
   padding: 5px;
   text-shadow: #444 1px 0 6px;
 }
 
 header nav .menu.show {
-  -webkit-transform: translateX(-50vw);
-          transform: translateX(-50vw);
+  -webkit-transform: translateX(-70vw);
+          transform: translateX(-70vw);
   -webkit-box-shadow: -4px 0 12px #212121;
           box-shadow: -4px 0 12px #212121;
   height: 100vh;
@@ -226,24 +231,24 @@ header .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
   position: relative;
   bottom: -88px;
-  max-width: 450px;
+  max-width: 100vw;
   height: 140px;
-  padding: 5px;
+  padding: 0 10%;
 }
 
 header .title img {
-  width: 130px;
-  border: 3px solid #eee;
+  width: 120px;
+  border: 4px solid #eee;
   border-radius: 50%;
   background: #eee;
+  margin-left: 5px;
+  -webkit-transition: width 1s;
+  transition: width 1s;
 }
 
 header .title .name {
@@ -258,24 +263,26 @@ header .title .name {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   height: 75px;
+  padding-left: 10px;
 }
 
 header .title .name h1 {
   font-size: 1.5em;
   font-weight: bold;
   letter-spacing: 3px;
+  overflow: hidden;
 }
 
 header .title .name h4 {
-  padding-right: 3px;
   font-weight: 300;
+  line-height: 0.9em;
 }
 
 .container {
@@ -286,7 +293,7 @@ header .title .name h4 {
 .container .skills,
 .container .projects,
 .container .contact {
-  padding: 0 25px 25px;
+  padding: 25px;
 }
 
 .container .about {
@@ -351,20 +358,21 @@ header .title .name h4 {
   color: #eee;
 }
 
-.container .skills .slider {
+.container .skills .skillsBar {
   margin-top: 10px;
 }
 
-.container .skills .slider ul {
+.container .skills .skillsBar ul {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-.container .skills .slider ul li {
+.container .skills .skillsBar ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -378,9 +386,10 @@ header .title .name h4 {
   color: #eee;
   font-size: 10px;
   font-weight: 300;
+  padding: 0 7px;
 }
 
-.container .skills .slider ul li .skillImg {
+.container .skills .skillsBar ul li .skillImg {
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -390,14 +399,15 @@ header .title .name h4 {
           align-items: center;
 }
 
-.container .skills .slider ul li .skillImg i {
+.container .skills .skillsBar ul li .skillImg i {
   text-shadow: #444 1px 0 6px;
   font-size: 5em;
 }
 
-.container .skills .slider ul li p {
+.container .skills .skillsBar ul li p {
   color: #7EFFFB;
   opacity: 0.7;
+  font-size: 13px;
 }
 
 .container .projects h2 {
@@ -599,8 +609,11 @@ footer .social {
       justify-content: space-around;
   width: 95%;
   margin: 0 auto 10px;
-  color: #eee;
   text-shadow: #151515 1px 0 6px;
+}
+
+footer .social a {
+  color: #eee;
 }
 
 footer p {
@@ -614,26 +627,34 @@ footer p span {
   font-weight: 300;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 434px) {
   header .title {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    max-width: 100vw;
   }
-  header .title .name {
-    padding: 0 10px 20px;
-  }
-  header .title .name h1,
   header .title .name h4 {
     -ms-flex-item-align: start;
         align-self: flex-start;
-    padding-top: 5px;
   }
   header .title .name h1 {
     line-height: 0.9em;
   }
   .container .about {
     padding-top: 10px;
+  }
+  .container .skills {
+    padding: 0 25px 25px;
+  }
+  .container .skills h2 {
+    padding-bottom: 0;
+  }
+  .container .skills .skillsBar {
+    margin-top: 0;
+  }
+  .container .skills .skillsBar ul li .skillImg i {
+    font-size: 3.2em;
   }
 }
 
@@ -642,13 +663,21 @@ footer p span {
   h2 {
     font-weight: 400;
   }
+  header nav .menu {
+    width: 60vw;
+    right: -60vw;
+  }
+  header nav .menu.show {
+    -webkit-transform: translateX(-60vw);
+            transform: translateX(-60vw);
+  }
   .container .about {
-    padding: 10px 100px 50px;
+    padding: 25px 100px 25px;
   }
   .container .about p {
     font-size: 1.3em;
   }
-  .container .skills .slider ul li p {
+  .container .skills .skillsBar ul li p {
     font-size: 1.3em;
   }
   .container .projects .grid-container {
@@ -680,8 +709,12 @@ footer p span {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
-    width: 300px;
+    width: auto;
     margin: 0;
+  }
+  footer .social i {
+    margin: 0 15px;
+    padding: 0 5px;
   }
 }
 
@@ -691,7 +724,6 @@ footer p span {
     font-weight: 400;
     font-size: 1.8em;
     text-align: center;
-    padding: 15px 0;
   }
   header {
     -webkit-box-orient: horizontal;
@@ -701,8 +733,11 @@ footer p span {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-left: 0;
+    padding-right: 5%;
   }
   header nav {
     -webkit-box-ordinal-group: 3;
@@ -769,25 +804,34 @@ footer p span {
   }
   header nav .menu .social {
     display: none;
-    overflow: hidden;
   }
   header .title {
     bottom: -33px;
+    padding-right: 0;
+  }
+  header .title img:hover {
+    width: 200px;
   }
   header .title .name {
     padding-left: 20px;
   }
-  .container .skills,
-  .container .projects,
-  .container .contact {
-    padding: 10px 50px 50px;
-  }
-  .container .skills .slider ul li {
+  .container .skills .skillsBar ul li {
     font-size: 1em;
   }
-  .container .skills .slider ul li .skillImg {
+  .container .skills .skillsBar ul li .skillImg {
     font-size: 0.9em;
     height: 100px;
+  }
+  .container .projects h2 span {
+    -webkit-transition: text-shadow 0.2s;
+    transition: text-shadow 0.2s;
+  }
+  .container .projects h2 span:hover {
+    cursor: pointer;
+    text-shadow: 2px 2px #bbb;
+  }
+  .container .projects .sort {
+    right: 50px;
   }
   .container .projects .sort.show {
     z-index: 1;
@@ -824,11 +868,11 @@ footer p span {
     font-size: 7em;
     opacity: 0;
     white-space: nowrap;
-    cursor: pointer;
+    cursor: default;
   }
   .container .projects .grid-container .proj .name-proj:hover {
-    -webkit-transition: font-size 0.5s, opacity 0.5s;
-    transition: font-size 0.5s, opacity 0.5s;
+    -webkit-transition: font-size 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    transition: font-size 0.4s ease-in-out, opacity 0.4s ease-in-out;
     font-size: 1em;
     opacity: 1;
   }
@@ -866,14 +910,14 @@ footer p span {
     -webkit-box-shadow: 0 2px 5px #444;
             box-shadow: 0 2px 5px #444;
   }
-  footer .social i {
+  footer .social a i {
     cursor: pointer;
     -webkit-transition: color 0.3s, -webkit-transform 0.3s;
     transition: color 0.3s, -webkit-transform 0.3s;
     transition: color 0.3s, transform 0.3s;
     transition: color 0.3s, transform 0.3s, -webkit-transform 0.3s;
   }
-  footer .social i:hover {
+  footer .social a i:hover {
     -webkit-transform: rotate(10deg);
             transform: rotate(10deg);
     color: #006E80;
@@ -882,20 +926,29 @@ footer p span {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+  header .title {
+    padding-left: 120px;
+  }
+  header .title img {
+    width: 160px;
+  }
   .container .about {
     width: 55%;
     margin: 0 auto;
   }
-  .container .skills .slider ul {
+  .container .skills .skillsBar ul {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .container .skills .slider ul li {
+  .container .skills .skillsBar ul li {
     margin: 0 30px;
   }
   .container .projects {
-    padding: 20px 200px 50px;
+    padding: 25px 200px 50px;
+  }
+  .container .projects .sort {
+    right: 200px;
   }
   .container .contact form {
     width: 50%;
@@ -911,16 +964,28 @@ footer p span {
 
 @media only screen and (min-width: 1550px) {
   .container .projects {
-    padding: 25px 250px 50px;
+    padding: 25px 300px 50px;
+  }
+  .container .projects .sort {
+    right: 300px;
   }
   .container .contact form {
     width: 40%;
   }
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 991px) {
   header nav .menu {
-    width: 50vw;
+    width: 55vw;
+  }
+  header nav .menu #navUL li {
+    padding: 10px;
+  }
+  header nav .menu #navUL li a {
+    font-size: 1.3em;
+  }
+  header nav .menu #navUL hr {
+    width: 50%;
   }
   header nav .menu .social {
     -webkit-box-orient: horizontal;
@@ -930,9 +995,55 @@ footer p span {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    width: 100%;
   }
-  header nav .menu .social i {
-    margin: 10px 20px;
+  header nav .menu .social a {
+    margin: 0 1%;
+    padding: 2%;
+  }
+}
+
+@-webkit-keyframes projIn {
+  from {
+    font-size: 7em;
+    opacity: 0;
+  }
+  to {
+    font-size: 1em;
+    opacity: 1;
+  }
+}
+
+@keyframes projIn {
+  from {
+    font-size: 7em;
+    opacity: 0;
+  }
+  to {
+    font-size: 1em;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes projOut {
+  from {
+    font-size: 1em;
+    opacity: 1;
+  }
+  to {
+    font-size: 7em;
+    opacity: 0;
+  }
+}
+
+@keyframes projOut {
+  from {
+    font-size: 1em;
+    opacity: 1;
+  }
+  to {
+    font-size: 7em;
+    opacity: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

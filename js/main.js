@@ -30,7 +30,6 @@ function printSortedArr(t) {
 }
 
 /* FORM VALIDATION */
-
 function validateForm(form) {
    const name = form.querySelector('#name').value;
    const email = form.querySelector('#email').value;
@@ -40,7 +39,7 @@ function validateForm(form) {
       errors.push('name')
    }
 
-   if(email === '' || email === null) {
+   if(email === '' || email === null || (!validateEmail(email))) {
       errors.push('email')
    }
 
@@ -48,4 +47,9 @@ function validateForm(form) {
       errors.push('message')
    }
    return errors
+}
+
+function validateEmail(e) {
+   const pattern = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gm
+   return pattern.test(e)
 }

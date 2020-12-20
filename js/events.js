@@ -1,3 +1,4 @@
+const nav = document.querySelector('nav')
 const menuButton = document.querySelector('.menu-btn')
 const menu = document.querySelector('.menu')
 const sortButton = document.querySelector('#sortBtn')
@@ -40,7 +41,6 @@ formElem.addEventListener('submit', (e) => {
    submitMsg.style = "visibility: visible"
 
    const errors = validateForm(formElem)
-   console.log(errors)
 
    if(errors.length > 0) {
       for(err of errors) {
@@ -55,6 +55,7 @@ formElem.addEventListener('submit', (e) => {
       }
    }
 })
+
 // reset color after focusing an input field
 for(el of elems) {
    el.addEventListener('focus', function(){
@@ -63,10 +64,8 @@ for(el of elems) {
 }
 
 /* HIDE MENUS WHEN CLICKED OUTSIDE */
-// .menu .sort
 window.addEventListener('click', function(e) {
    if(!menuButton.contains(e.target) && (!sortButton.contains(e.target))) {
-      console.log('test')
       menu.classList.remove('show')
       menuButton.classList.remove('open')
       sortMenu.classList.remove('show')
@@ -74,14 +73,20 @@ window.addEventListener('click', function(e) {
 })
 
 /* FIXES NAVBAR ON TOP*/
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', () => {
    const target = document.getElementById('titleName')
-   const nav = document.querySelector('nav')
    if(window.scrollY > (target.offsetTop + target.offsetHeight) && window.innerWidth < 992) {
       nav.classList.add('nav-top')
       nav.classList.add('show')
    } else {
       nav.classList.remove('nav-top')
       nav.classList.remove('show')
+   }
+})
+
+window.addEventListener('resize', () => {
+   if(window.innerWidth >= 992) {
+      menuButton.classList.remove('open')
+      menu.classList.remove('show')
    }
 })
