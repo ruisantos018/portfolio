@@ -641,11 +641,8 @@ footer p span {
   header .title .name h1 {
     line-height: 0.9em;
   }
-  .container .about {
-    padding-top: 10px;
-  }
   .container .skills {
-    padding: 0 25px 25px;
+    padding: 25px;
   }
   .container .skills h2 {
     padding-bottom: 0;
@@ -655,6 +652,9 @@ footer p span {
   }
   .container .skills .skillsBar ul li .skillImg i {
     font-size: 3.2em;
+  }
+  .container .skills .skillsBar ul li p {
+    font-size: 1.1em;
   }
 }
 

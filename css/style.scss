@@ -446,11 +446,8 @@ footer {
       }
    }
    .container {
-      .about {
-         padding-top: 10px;
-      }
       .skills {
-         padding: 0 25px 25px;
+         padding: 25px;
          h2 {
             padding-bottom: 0;
          }
@@ -462,6 +459,9 @@ footer {
                      i {
                         font-size: 3.2em;
                      }
+                  }
+                  p {
+                     font-size: 1.1em;
                   }
                }
             }
