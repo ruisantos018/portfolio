@@ -804,24 +804,3 @@ footer {
       }
    }
  }
-
- @keyframes projIn {
-    from {
-       font-size: 7em;
-       opacity: 0;
-    }
-    to {
-       font-size: 1em;
-       opacity: 1;
-    }
- }
- @keyframes projOut {
-   from {
-      font-size: 1em;
-      opacity: 1;
-   }
-   to {
-      font-size: 7em;
-      opacity: 0;
-   }
-}
