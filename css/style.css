@@ -44,12 +44,38 @@ header {
 }
 
 header nav {
+  width: 100%;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  position: absolute;
+  -webkit-transition: background-color 0.2s, -webkit-transform 0.5s;
+  transition: background-color 0.2s, -webkit-transform 0.5s;
+  transition: transform 0.5s, background-color 0.2s;
+  transition: transform 0.5s, background-color 0.2s, -webkit-transform 0.5s;
+}
+
+header nav.nav-top {
+  position: fixed;
+  top: -50px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #006E80;
+  z-index: 3;
+  width: 100%;
+}
+
+header nav.nav-top.show {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
 }
 
 header nav .menu-btn {
@@ -122,12 +148,12 @@ header nav .menu {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  width: 68vw;
+  width: 50vw;
   height: 100vh;
   background: #006E80;
   position: fixed;
   top: 0;
-  right: -68vw;
+  right: -50vw;
   z-index: 1;
   -webkit-transition: -webkit-transform 0.2s ease-out;
   transition: -webkit-transform 0.2s ease-out;
@@ -189,8 +215,8 @@ header nav .menu .social i {
 }
 
 header nav .menu.show {
-  -webkit-transform: translateX(-68vw);
-          transform: translateX(-68vw);
+  -webkit-transform: translateX(-50vw);
+          transform: translateX(-50vw);
   -webkit-box-shadow: -4px 0 12px #212121;
           box-shadow: -4px 0 12px #212121;
   height: 100vh;
@@ -207,7 +233,7 @@ header .title {
       -ms-flex-align: end;
           align-items: flex-end;
   position: relative;
-  bottom: -33px;
+  bottom: -88px;
   max-width: 450px;
   height: 140px;
   padding: 5px;
@@ -263,6 +289,22 @@ header .title .name h4 {
   padding: 0 25px 25px;
 }
 
+.container .about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .container .about h2 {
   color: #006E80;
 }
@@ -270,8 +312,35 @@ header .title .name h4 {
 .container .about p {
   color: #707070;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 1.2em;
   text-align: center;
+}
+
+.container .about p.lg {
+  font-size: 1.6em;
+}
+
+.container .about p:nth-child(5) {
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.container .about .btn {
+  text-decoration: none;
+  background-color: #006E80;
+  color: #eee;
+  padding: 15px 30px;
+  border-radius: 8px;
+  margin-top: 20px;
+  -webkit-transition: -webkit-box-shadow 0.2s;
+  transition: -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+}
+
+.container .about .btn:hover {
+  -webkit-box-shadow: 0 2px 5px #444;
+          box-shadow: 0 2px 5px #444;
 }
 
 .container .skills {
@@ -323,6 +392,7 @@ header .title .name h4 {
 
 .container .skills .slider ul li .skillImg i {
   text-shadow: #444 1px 0 6px;
+  font-size: 5em;
 }
 
 .container .skills .slider ul li p {
@@ -471,6 +541,12 @@ header .title .name h4 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.container .contact form .submit-msg {
+  text-align: center;
+  color: #41cc00;
+  visibility: hidden;
 }
 
 .container .contact form #name,
@@ -642,9 +718,9 @@ footer p span {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+    position: relative;
+    height: auto;
+    width: auto;
   }
   header nav .menu-btn {
     display: none;
@@ -695,6 +771,9 @@ footer p span {
     display: none;
     overflow: hidden;
   }
+  header .title {
+    bottom: -33px;
+  }
   header .title .name {
     padding-left: 20px;
   }
@@ -732,7 +811,7 @@ footer p span {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(10, 10, 10, 0.9);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

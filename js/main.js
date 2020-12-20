@@ -35,19 +35,17 @@ function validateForm(form) {
    const name = form.querySelector('#name').value;
    const email = form.querySelector('#email').value;
    const msg = form.querySelector('#message').value;
-
+   const errors = []
    if(name === '' || name === null) {
-      //form.querySelector('#nome').style.border = "1px solid red"
-      console.log('erro nome')
+      errors.push('name')
    }
 
    if(email === '' || email === null) {
-      //form.querySelector('#email').style.border = "1px solid red"
-      console.log('erro email')
+      errors.push('email')
    }
 
    if(msg === '' || msg === null) {
-      //form.querySelector('#message').style.border = "1px solid red"
-      console.log('erro mensagem')
+      errors.push('message')
    }
+   return errors
 }

@@ -3,6 +3,7 @@ $darkgrey: #212121;
 $blue: #006E80;
 $grey: #707070;
 $boxsh: 0 2px 5px #444;
+$tr-boxsh-02: box-shadow .2s;
 $tr-txtsh-02: text-shadow .2s;
 $tr-color-02: color .2s;
 
@@ -43,8 +44,25 @@ header {
    justify-content: space-between;
    height: 195px;
    nav {
+      width: 100%;
+      height: 50px;
       display: flex;
       justify-content: flex-end;
+      position: absolute;
+      transition: transform 0.5s, background-color 0.2s;
+
+      &.nav-top {
+         position: fixed;
+         top: -50px;
+         justify-content: flex-end;
+         align-items: center;
+         background: $blue;
+         z-index: 3;
+         width: 100%;
+         &.show {
+            transform: translateY(50px);
+         }
+      }
       .menu-btn {
          padding: 25px;
          height: 10px;
@@ -95,12 +113,12 @@ header {
          display: flex;
          flex-direction: column;
          justify-content: space-evenly;
-         width: 68vw;
+         width: 50vw;
          height: 100vh;
          background: $blue;
          position: fixed;
          top: 0;
-         right: -68vw;
+         right: -50vw;
          z-index: 1;
          transition: transform 0.2s ease-out;
          #navUL {
@@ -137,7 +155,7 @@ header {
             }
          }
          &.show {
-            transform: translateX(-68vw);
+            transform: translateX(-50vw);
             box-shadow: -4px 0 12px $darkgrey;
             height: 100vh;
          }
@@ -151,7 +169,7 @@ header {
       justify-content: space-evenly;
       align-items: flex-end;
       position: relative;
-      bottom: -33px;
+      bottom: -88px;
       max-width: 450px;
       height: 140px;
       padding: 5px;
@@ -193,14 +211,40 @@ header {
    }
 
    .about {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       h2 {
          color: $blue;
       }
       p {
          color: $grey;
          font-weight: 300;
-         font-size: 15px;
+         font-size: 1.2em;
          text-align: center;
+         &.lg {
+            font-size: 1.6em;
+         }
+         span {
+            
+         }
+         &:nth-child(5) {
+            margin-top: 20px;
+            font-weight: 400;
+         }
+      }
+      .btn {
+         text-decoration: none;
+         background-color: $blue;
+         color: $white;
+         padding: 15px 30px;
+         border-radius: 8px;
+         margin-top: 20px;
+         transition: $tr-boxsh-02;
+         &:hover {
+            box-shadow: $boxsh;
+         }
       }
    }
    .skills {
@@ -214,6 +258,7 @@ header {
             list-style: none;
             display: flex;
             justify-content: space-around;
+
             li {
                display: flex;
                flex-direction: column;
@@ -221,12 +266,15 @@ header {
                color: $white;
                font-size: 10px;
                font-weight: 300;
+               
+
                .skillImg {
                   height: 60px;
                   display: flex;
                   align-items: center;
                   i {
                      text-shadow: #444 1px 0 6px;
+                     font-size: 5em;
                   }
                }
                p {
@@ -332,6 +380,11 @@ header {
       form {
          display: flex;
          flex-direction: column;
+         .submit-msg {
+            text-align: center;
+            color: rgb(65, 204, 0);
+            visibility: hidden;
+         }
          #name,
          #email,
          #message {
@@ -486,7 +539,12 @@ footer {
          flex-direction: column;
          justify-content: flex-end;
          align-items: center;
-         width: fit-content;
+         position: relative;
+         height: auto;
+         width: auto;
+         
+         &.nav-top {
+         }
          .menu-btn {
             display: none;
          }
@@ -526,6 +584,7 @@ footer {
          
       }
       .title {
+         bottom: -33px;
          .name {
             padding-left: 20px;
          }
@@ -574,7 +633,7 @@ footer {
                   height: 100%;
                   width: 100%;
                   overflow: hidden;
-                  background: rgba(10,10,10,0.8);
+                  background: rgba(10,10,10,0.9);
                   display: flex;
                   align-items: center;
                   justify-content: center;
