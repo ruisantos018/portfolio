@@ -809,9 +809,6 @@ footer p span {
     bottom: -33px;
     padding-right: 0;
   }
-  header .title img:hover {
-    width: 200px;
-  }
   header .title .name {
     padding-left: 20px;
   }
